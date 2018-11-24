@@ -10,5 +10,6 @@ variables:
   imageName: 'your-container-image-name:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
-  displayName: 'docker build'
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+pool:
+  vmImage: 'ubuntu-16.04' # Other options: 'macOS-10.13', 'vs2017-win2016'
